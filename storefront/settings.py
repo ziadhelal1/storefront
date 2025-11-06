@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'playground',
     'tags',
     'store',
-    
+    'likes',
+
 ]
 INTERNAL_IPS = [
     # ...
