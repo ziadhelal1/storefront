@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'playground',
+    'silk',
     'tags',
     'store',
     'likes',
@@ -53,6 +54,7 @@ INTERNAL_IPS = [
 
 MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "silk.middleware.SilkyMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -93,6 +95,8 @@ DATABASES = {
         'PASSWORD': '123321zZ@',
         'HOST': 'localhost',
         'PORT': '3306',
+        'CONN_MAX_AGE': 120,     # after 2 minutes   
+        
     }
 }
 

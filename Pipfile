@@ -9,6 +9,7 @@ django-debug-toolbar = "*"
 django-sql-explorer = "*"
 mysqlclient = "*"
 djangorestframework = "*"
+django-silk = "*"
 
 [dev-packages]
 

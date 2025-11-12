@@ -12,12 +12,13 @@ class Collection(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    price = models.DecimalField(max_digits=6, decimal_places=2,db_index=True)
     inventory = models.IntegerField()
     last_updated = models.DateTimeField(auto_now_add=True)
     Collection=models.ForeignKey(Collection,on_delete=models.PROTECT,null=True)
     promotions=models.ManyToManyField(Promotion,related_name='products')
     def __str__(self):
+        
         return f"Product #{self.id} - {self.title}"
 class Customer(models.Model):
     MEMBERSHIP_BRONZE='B'
